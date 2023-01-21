@@ -14,8 +14,66 @@ Purchased Digital Book / Coursework for CTEC-170 Windows Server Class
 **************************************************************************************
 
 <h2>1.1 Using Windows Server 2019 Within an Orginization</h2>
+<b>Server</b> - hosts and shares the resource for client computer (can be on-site, or cloud)
+<b>Client</b> - connects to a shared resource
+
+servers are rackmount
+SAN - Storage Area Network - provides storage for servers within the rack
+UPS - Uninterruptible Power Supply - power backup
+
+<i>"The minimum height of a rackmount server is 1.75 inches. Servers of this size are called 1U servers.
+     (The letter “U” is short for unit.) Most 1U servers have up to two hard drives (or SSDs) and up to 
+     two processors. Other rackmount servers take up more than one spot on the rack and have a height that
+     is a multiple of a 1U server. For example, a 2U server is twice as high as a 1U server and often
+     contains up to four processors and eight hard disks (or SSDs). Rackmount servers rarely exceed 4U, 
+     but SAN devices are often 4U or more."</i>
+
+<img src="https://college.cengage.com/nextbook/shared/networking/eckert_9780357436158/images/36158_ch01_01-t2.png?token=F847F69B9DE5285AA76EF21F3185F8F82CC5F37C21D4CC542BE0DE0BFC47787A5CD1590991087B52CA8FD133B8FFC67721D79A7FFD44519597E78C079F2913623E742A8659BF3BCA">
+
+
+** A single rackmount server may contain multiple smaller, modular servers. In this case, the modular servers are called 'blade servers'.
+
+** If Non-Volatile Memory Express (NVMe) SSDs are used, then the number of SSDs within a rackmount server or SAN
+   may be substantially higher due to the small physical size of NVMe devices.
+
 <h3>1.1a Understanding Windows Server Virtualization</h3>
+<b>Virtualization</b> = running more than 1 OS on single computer at the same time.
+<b>Hypervisor</b> allows hardware to host multiple operating systems 
+<b>Type I</b> - bare bones -- runs underneath any of the VM OSes
+<b>Type II</b> - run on top of an existing OS (ex: VMware Workstation, Oracle VirtualBox and Parallels Workstation) - common for development and testing
+<img src="https://college.cengage.com/nextbook/shared/networking/eckert_9780357436158/images/36158_ch01_02-t2.jpg?token=F847F69B9DE5285AA76EF21F3185F8F82CC5F37C21D4CC542BE0DE0BFC47787A5CD1590991087B52CA8FD133B8FFC67721D79A7FFD44519597E78C079F2913623E742A8659BF3BCA">
+
+** Microsoft Hyper-V is a Type 1 hypervisor. Other common Type 1 hypervisors used today include VMWare ESX/ESXi and Linux KVM. 
+
+** Nearly all hypervisors today require that your processor supports hypervisor acceleration; this feature is referred to as Intel VT (for Intel) or AMD-V (for AMD). 
+   Most hypervisors, including Hyper-V, also require that your processor supports Second Level Address Translation (SLAT) extensions. 
+
+<b>Thick Provisioning</b> - fixed space virtual hard disk file    
+<b>Thin Provisioning</b> - dynamically allocated space hard disk file
+    * Thin Provision is normally preferred as it conserves space on the underlying server storage
+
+** Hyper-V virtual hard disk files have a .vhdx extension, VMWare virtual hard disk files have a .vmdk extension, Oracle VirtualBox virtual hard disks have a .vdi extension, 
+   and KVM virtual hard disks have either a .qcow2 extension or omit the extension altogether.
+
+** Generation 1 VM - Hyper-V VM that emulates older hardware 
+** Gen 2 VM - emulates newer hardware than Gen 1 and is faster
+
+** Checkpoints / Snapshots -- backup your VM before trying risky new upgrades or software changes
+
+<img src="https://college.cengage.com/nextbook/shared/networking/eckert_9780357436158/images/36158_ch01_03-t2.png?token=F847F69B9DE5285AA76EF21F3185F8F82CC5F37C21D4CC542BE0DE0BFC47787A5CD1590991087B52CA8FD133B8FFC67721D79A7FFD44519597E78C079F2913623E742A8659BF3BCA">
+
+** Hyper-V does allow 'nested virtualization' can run 'Hyper-V' on a VM
+
+<img src="https://college.cengage.com/nextbook/shared/networking/eckert_9780357436158/images/36158_ch01_04-t2.jpg?token=F847F69B9DE5285AA76EF21F3185F8F82CC5F37C21D4CC542BE0DE0BFC47787A5CD1590991087B52CA8FD133B8FFC67721D79A7FFD44519597E78C079F2913623E742A8659BF3BCA">
+
+in PowerShell - (ensure that VM1 can install Hyper-V); 
+    - power off VM1
+    - $   Set-VMProcessor -VMName VM1 -ExposeVirtualizationExtensions $true
+    -- may need to allow MAC address spoofing:
+    - $   Get-VMNetworkAdapter -VMName VM1 | Set-VMNetworkAdapter -MacAddressSpoofing On
+
 <h3>1.1b Understanding Windows Containers</h3>
+
 
 <h2>1.2 Windows Server 2019 Features</h2>
 <h3>1.2a Active Directory</h3>
