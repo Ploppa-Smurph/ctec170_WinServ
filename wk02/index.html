@@ -150,12 +150,49 @@ similar to VM -- packages an APP with all dependencies required
 <b>Hyper-V container</b> - provide additional security features, seperate kernels per container 
 
 <h3>Chap 01 vid 04 Windows Server 2019 Features</h3>
-Server Essential:
-Server Standard:
-Server Database:
+<b>Active Directory</b> - single sign-on and authentication 
+<b>Azure Active Directory</b> - hosted within Microsoft Azure Cloud
 
+--SECURITY--
+<b>ATP Microsoft Defender Advanced Threat Protection</b>
+<b>Shielded VM</b>
+<b>IIS (Internet Information Services) web server software</b>
+-- additional basic security: file and folder permissions, security policy, encryption of data, even auditing...
 
-<h3>Chap 01 vid 05</h3>
+--Volume and Filesystem features--
+<b>NTFS features</b> - built in support for file and folder permissions
+<b>ReFS v3 (Resiliant File System)</b> - Data deduplication - improved performace with Storage Spaces
+
+--Server Clustering---
+
+--Small Footprint versions--
+Server Nano
+Server Core
+ 
+--Administration Tools-- 
+<b>Server Manager</b>
+<b>Admin Center</b> - add on for 2019, does everything 'Server Manager' does
+<b>PowerShell</b> 
+
+--Hybrid Cloud Features--
+Cloud backup for On-Premise servers
+
+Kubernetes Software coordinates containers
+
+--Linux App Support--
+
+<h3>Chap 01 vid 05 Server Editions</h3>
+<b>Server Core</b>: CLI only
+<b>Nano Server</b>: like a webserver??
+
+<b>Server Essential</b>: 25 users, licensed per server, 64GB RAM, 2 CPU Sockets
+        -- NO Hyper-V, NO Containers, NO Hyper-V Containers
+
+<b>Server Standard</b>: Licensed per CPU core, 24TB RAM, 64 CPU Sockets
+        -- Hyper-V (2 VMs), Unlimited Containers, 2x Hyper-V Containers
+
+<b>Server Database</b>: Licensed Per CPU core, 24TB RAM, 64 CPU Sockets 
+        -- Hyper-V (unlimited), Unlimited Containers, Unlimited Hyper-V containers
 
 
 
