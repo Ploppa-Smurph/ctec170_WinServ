@@ -217,8 +217,56 @@ Kubernetes Software coordinates containers
 </ol>
 
 <h3>Chap 01 vid 06 Configuring the Network</h3>
+<b>**Servers need a STATIC IP ADDRESS**</b>
 
+3 default Windows protocols: TCP/IP; UDP/IP; ICMP
 
+TCP ensures re-transmisson of lost packets
+
+IPv4 (32bit)[4x 8bit]: valid IP address and subnet mask, IP address of default gateway, IP address of DNS server
+        -- the address consist of 4 octets: ex: 144.58.0.1     -- representation of binary -- subnet defines Network and Host
+        -- subnet mask:                         255.255.0.0    -- Network Portion (255s) and Host Portion (0s)
+
+IPv6 (128bit)[8x 16bit]: used by IoT (Internet of Things) 
+          ** can use <b><i>'Teredo protocol'</i></b> to work within IPv4-only networks                  
+
+-Proxy servers and NAT (Network Address Translation) routers allow more IPv4 addressess          
+
+DHCP (Dynamic Host Configuration Protocol) --- if the DHCP server isn't working or communicating then the machine assigns an APIPA address
+    APIPA (Automatic Private IP Adressing) [169.254..]
+
+--Configure Firewall-- disable firewall to   
+
+-- turn off IE ESC (Internet Explorer Enhanced Security Configuration) for the 'admin'
+    - navigate to Local Server
+    - Select hyperlink next to IE Enchanced Security Configuration (in Properties)
+    - Disable IE ESC for system admin (or all users)
+
+*ACTIVATE WINDOWS SERVER*
+    - Generic Volume License Key (GVLK) - requires Key Management Service (KMS) installed on Network Server
+    - Multiple Activation Key (MAK)
+
+<h1>Quiz Answers</h1>    
+1.False
+2.C
+3.A
+4.True
+5.B
+6.C
+7.False
+8.A
+9.True
+10.D
+11.True
+12.A,C
+13.True
+14.Standard
+15.False
+16.B,C
+17.B
+18.True
+19.A,B,C,D
+20.True
 </pre>
 </body>
 </html>
