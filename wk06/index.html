@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CTEC-170 wk06 </title>
+</head>
+<body>
+<pre>
+<h1>CTEC-170 wk06</h1>
+<h2>Summary</h2>
+- You can log into a system with a local user account to obtain rights and permissions to local resources. Local group accounts can be used to simplify the assignment of local rights 
+   and permissions. Each local user and group account is stored within a SAM database on the system.
+
+- Alternatively, you can use a domain user account to log into a system that is joined to an Active Directory domain. After authenticating to a domain controller, you receive a token 
+   that automatically authenticates you to computers within the domain for resource access. Each token also lists any domain group accounts of which you are a member.
+
+- Domain user, group, and computer accounts are stored as leaf objects within the Active Directory database. Leaf objects are often located within OUs that represent departments or 
+   functional units within an organization.
+
+- Each organization is represented by a forest within Active Directory. Each forest contains one or more business units represented by domains. Domains that have a parent-child 
+   relationship are called a tree, and share a common DNS domain name.
+
+- Domain functional levels specify the minimum version of Windows Server that each domain controller must possess within a domain. Forest functional levels specify the minimum domain 
+   functional levels supported within the forest. You can raise domain and forest functional levels to unlock Active Directory features available in newer versions of Windows Server.
+
+- Users within one domain can access resources within other domains they have been granted permission to using trusts relationships.
+
+- To organize the assignment of permissions to resources within a forest, Active Directory provides three group scopes: global, domain local, and universal. At minimum, users are typically 
+   added to global groups within their domain by job role.
+
+- The Active Directory database contains three partitions. Domain objects are stored within the domain partition and replicated to other domain controllers within the same domain. The schema partition 
+   (list of object types and attributes) and configuration partition (domain and trust structure) are replicated to all domain controllers within the forest.
+
+- If you create sites to represent different physical locations within your organization, you can configure site links to control replication between domain controllers in different sites.
+
+- The global catalog lists all objects within the forest and is used to store universal group membership. To ensure fast search and authentication, each site should have at least one domain controller 
+   that holds a copy of the global catalog. To provide fast authentication for sites that are unable to hold a copy of the global catalog, you can enable UGMC.
+
+- Functions that are performed by a single domain controller within a domain or forest are called FSMO roles. You can move FSMO roles between domain controllers or seize FSMO roles from a 
+   failed domain controller.
+
+- Azure Active Directory is an Active Directory service provided by the Microsoft Azure cloud. It can mirror an existing on-premises Active Directory forest or be configured to trust it for resource access.
+
+- After installing Active Directory Domain Services on a Windows Server system, you can run the Active Directory Domain Services Configuration Wizard to configure it as a domain controller within an 
+   existing or new domain.
+
+- In addition to Windows PowerShell cmdlets, there are many graphical tools that can be used to manage Active Directory. The Active Directory Domains and Trusts tool can manage functional levels and 
+   trust relationships, whereas the Active Directory Sites and Services tool can manage sites and global catalog. The Active Directory Users and Computers tool or Active Directory Administrative Center 
+   tool can be used to manage objects within a domain.
+
+- RODCs can be used to provide authentication within smaller branch offices that lack adequate physical security. They contain a read-only copy of the Active Directory database that is configured to 
+   store password attributes for user accounts within the branch office only.
+</pre>
+</body>
+</html>
