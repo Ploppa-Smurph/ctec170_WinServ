@@ -10,6 +10,8 @@
 <pre>
 <h1>CTEC-170 Windows Server wk 07 Configuring Resource Access</h1>
 <h2>Lab 5.1 Host Setup</h2>
+In this Hands-On Project, you install the server roles and features on your Windows Server 2019 host required for the remaining Hands-On Projects within this module, 
+  including the Server for NFS, Client for NFS, File Server Resource Manager, DFS Namespaces, and DFS Replication.
 
 <h2>Lab 5.2 Member Server Setup</h2>
 
@@ -20,7 +22,27 @@
 <h2>Lab 5.5 Attributes</h2>
 
 <h2>Summary</h2>
+    - Folders and files on filesystems can contain attributes that provide for different filesystem features. All filesystems support the read-only, hidden, and archive attributes. The FAT32, exFAT, and NTFS filesystems support the encrypt attribute, and NTFS additionally supports the index and compress attributes.
 
+    - Windows Server 2019 uses discretionary access control lists (DACLs) for managing access to folders and files on NTFS and ReFS volumes and system access control lists (SACLs) for auditing access to folders and files.
+
+    - DACLs grant or deny permissions to groups and users. Users receive the basic or advanced permissions assigned to their user account as well as any group accounts to which they belong. Deny permissions take precedence over allow permissions.
+
+    - Members of the Administrators group, users that have Full Control permission, and the owner of a folder or file are able to modify ownership and permissions.
+
+    - If an audit policy is enabled, folders and files will log events to the Security log according to the audit entries configured within the SACL.
+
+    - To allow network users to access files on a file server, the folder that contains the files must be shared using SMB or NFS, and shared folder permissions must be configured. SMB shared folder permissions are assigned to groups and users, whereas NFS shared permissions are assigned to computers.
+
+    - After connecting to a shared folder on an NTFS/ReFS filesystem, users are further restricted by the permissions within the DACL on each folder and file.
+
+    - DFS namespaces can be configured to provide a central location for users to access the shared folders on your network. If integrated with Active Directory, domain users can use their domain name within a UNC to connect to DFS namespaces.
+
+    - By configuring a replication group, DFS replication can be used to keep the contents of folders on different file servers synchronized for ease and fault tolerance.
+
+    - Quotas can be used to limit the amount of space that files can consume. User quotas limit the space user files can consume on an NTFS filesystem, whereas folder quotas limit the space consumed by specific folders on an NTFS filesystem.
+
+    - File screens can be applied to folders on an NTFS filesystem to limit the type of files that can be stored.
 <h2>Quiz</h2>
 
 </pre>    
